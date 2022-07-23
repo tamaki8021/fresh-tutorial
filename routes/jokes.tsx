@@ -17,6 +17,7 @@ export default function jokes({ data }: PageProps<string>) {
   return (
     <div>
       {data}
+      <p>{host}</p>
     </div>
   );
 }
