@@ -5,8 +5,7 @@ import "dotenv";
 
 export const handler: Handlers<string> = {
   async GET(_, ctx) {
-    const host = Deno.env.get("HOST");
-    const resp = await fetch(`${host}/api/joke`);
+    const resp = await fetch(`${Deno.env.get("HOST")}/api/joke`);
     const joke = await resp.text();
     return ctx.render(joke);
   },
