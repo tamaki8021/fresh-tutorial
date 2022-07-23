@@ -1,7 +1,7 @@
 /** @jsx h */
 import { h } from "preact";
 import { Handlers, PageProps } from "$fresh/server.ts";
-import "dotenv";
+// import "dotenv";
 
 export const handler: Handlers<string> = {
   async GET(_, ctx) {
