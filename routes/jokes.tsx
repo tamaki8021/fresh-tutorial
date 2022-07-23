@@ -1,11 +1,13 @@
 /** @jsx h */
 import { h } from "preact";
 import { Handlers, PageProps } from "$fresh/server.ts";
-// import "dotenv";
+import "dotenv";
+
+const host = Deno.env.get("HOST");
 
 export const handler: Handlers<string> = {
   async GET(_, ctx) {
-    const resp = await fetch(`${Deno.env.get("HOST")}/api/joke`);
+    const resp = await fetch(`${host}/api/joke`);
     const joke = await resp.text();
     return ctx.render(joke);
   },
